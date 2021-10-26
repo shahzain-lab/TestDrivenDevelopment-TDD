@@ -1,14 +1,22 @@
-enum Type {
+export enum Type {
     todo = 'LOAD_TODOLIST',
     singleTodo = 'LOAD_SINGLE_TODO'
 }
 
+export interface Todo {
+    id: number,
+    title: string,
+    completed: boolean,
+    userId: number
+}
+
 export type Action = {
     type: Type,
-    payload: {}
+    todoList: Todo[],
+    todo?: boolean
 }
 
 export type State = {
-    todoList: [],
-    activeTodo: { id: number }
-}
+    todoList: Todo[],
+    activeTodoItem: boolean;
+}                                                                                              
