@@ -1,4 +1,4 @@
-import { todos } from '../../components/Todo';
+import { todos } from '../components/Todo';
 
 export default {
     get: jest.fn().mockImplementation((url) => {

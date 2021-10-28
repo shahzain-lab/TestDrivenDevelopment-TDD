@@ -11,16 +11,17 @@ const TodoList = () => {
 
 
     React.useEffect(() => {
-        axios.get<Todo[]>("https://jsonplaceholder.typicode.com/todos").then((resp) => {
-            const { data } = resp;
+        const getTodos = async () => {
+            const { data } = await axios.get<Todo[]>("https://jsonplaceholder.typicode.com/todos");
             dispatch({ type: Type.todo, todoList: data });
             setLoading(false);
-        }).catch(err => err);
+        }
+        getTodos();
     }, [dispatch, setLoading]);
 
     return (
         <div>
-            {loading ? <h2>Fetching todos...</h2> :
+            {loading ? (<h2>Fetching todos...</h2>) :
                 (
                     <ul>
                         {state.todoList.slice(0, 15).map((item: Todo) => {

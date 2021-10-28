@@ -6,7 +6,7 @@ type Props = {
     children: React.ReactNode
 }
 
-interface AppContext {
+interface IAppContext {
     state: State,
     dispatch: React.Dispatch<Action>
 }
@@ -16,9 +16,9 @@ const initialState: State = {
     activeTodoItem: false
 }
 
-export const AppContext = createContext<AppContext>({
+export const AppContext = createContext<IAppContext>({
     state: initialState,
-    dispatch: () => console.log("Hello")
+    dispatch: () => "Hello"
 });
 
 export const AppProvider: React.FC<Props> = ({ children }) => {

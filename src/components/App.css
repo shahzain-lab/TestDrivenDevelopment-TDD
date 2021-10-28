@@ -3,7 +3,7 @@
   text-align: center;
 }
 .App-header {
-  min-height: 50vh;
+  height: 10vh;
   display: flex;
   background-color: #282c34;
   flex-direction: coslumn;
